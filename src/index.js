@@ -16,6 +16,8 @@ const client = new Discord.Client({
 });
 const prefix = '!'
 
+module.exports = client;
+
 const fs = require('fs')
 const path = require('path')
 client.commands = new Discord.Collection();
@@ -40,6 +42,15 @@ client.on('message', message => {
 
     if (command === 'ddverbonden') {
         client.commands.get('ddverbonden').execute(message, args);
+    }
+    else if (command === 'createrolselect') {
+        client.commands.get('createrolselect').execute(message, args);
+    }
+    else if (command === 'rules'){
+        client.commands.get('rules').execute(message, args);
+    }
+    else if (command === 'tickets'){
+        client.commands.get('tickets').execute(message, args);
     }
 })
 
